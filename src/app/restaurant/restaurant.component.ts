@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantComponent implements OnInit {
 
+  restaurants = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.restaurants = ["Uno", "dos"];
   }
 
 }
