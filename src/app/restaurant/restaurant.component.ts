@@ -15,7 +15,11 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit() {
     // this.restaurants = ["Uno", "dos"];
-    this.restaurants = this.restaurantService.getRestaurants();
+    // this.restaurants = this.restaurantService.getRestaurants();
+
+    this.restaurantService.getRestaurants().then(response => {
+      this.restaurants = response;
+    });
   }
 
 }
