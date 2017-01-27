@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  books = [];
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.books = ['Test'];
   }
 
 }
