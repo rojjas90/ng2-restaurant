@@ -5,12 +5,17 @@ import 'rxjs/Rx';
 @Injectable()
 export class SaucerService {
 
-  apiURL = 'https://stark-river-41252.herokuapp.com/api/restaurants/';
+  apiURL = 'https://stark-river-41252.herokuapp.com/api/';
 
   constructor(private http: Http) { }
 
-  getSaucer(id: string) {
-    return this.http.get(this.apiURL + id + '/saucers')
+  getSaucer(restaurantId: string) {
+    return this.http.get(this.apiURL + 'restaurants/' + restaurantId + '/saucers')
+      .map((response: Response) => response.json()).toPromise();
+  }
+
+  getSaucers(saucerId: string) {
+    return this.http.get(this.apiURL + 'saucers/' + saucerId)
       .map((response: Response) => response.json()).toPromise();
   }
 

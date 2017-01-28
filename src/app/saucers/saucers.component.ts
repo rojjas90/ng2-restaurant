@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 import {RestaurantService} from '../restaurant/restaurant.service';
@@ -10,7 +10,7 @@ import {SaucerService} from './saucers.service';
   styleUrls: ['./saucers.component.css'],
   providers: [SaucerService, RestaurantService]
 })
-export class SaucersComponent implements OnInit {
+export class SaucersComponent implements OnInit, OnDestroy {
   restaurantId: '';
   restaurant = {};
   saucers = [];
@@ -55,4 +55,7 @@ export class SaucersComponent implements OnInit {
     // });
   }
 
+  ngOnDestroy() {
+  this.subscription.unsubscribe();
+}
 }
