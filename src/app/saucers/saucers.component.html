@@ -1,3 +1,8 @@
-<p>
-  saucers works!
-</p>
+<h2>Saucers de:{{restaurant.id}}</h2>
+<ul>
+  <li *ngFor="let saucer of saucers" class="card">
+    <h3>{{saucer.name}}</h3>
+    <p>{{saucer.description}}</p>
+    <span>{{saucer.price}}</span>
+  </li>
+</ul>

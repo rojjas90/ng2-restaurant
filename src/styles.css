@@ -13,3 +13,28 @@ html, body {
   box-sizing: border-box;
   padding: 20px;
 }
+
+
+/************************/
+
+.card {
+  list-style: none;
+  width: 20%;
+  height: 200px;
+  border: solid 1px #ccc;
+  box-shadow: 3px 3px 10px #666;
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.card p {
+  color: #333;
+}
+
+.card a {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}

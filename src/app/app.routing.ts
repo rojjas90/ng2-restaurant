@@ -1,6 +1,6 @@
 import {RouterModule, Routes} from '@angular/router';
-import {RestaurantComponent} from "./restaurant/restaurant.component";
-import {SaucersComponent} from "./saucers/saucers.component";
+import {RestaurantComponent} from './restaurant/restaurant.component';
+import {SaucersComponent} from './saucers/saucers.component';
 
 const APP_ROUTES: Routes = [
   { path: '', component: RestaurantComponent },
