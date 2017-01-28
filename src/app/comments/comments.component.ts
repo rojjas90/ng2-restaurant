@@ -21,6 +21,9 @@ export class CommentsComponent implements OnInit, OnDestroy {
   comments = [];
   data = {};
 
+  commentSuccess: Boolean;
+  commentError: Boolean;
+
   constructor(
     private route: ActivatedRoute,
     private saucerService: SaucerService,
@@ -57,8 +60,17 @@ export class CommentsComponent implements OnInit, OnDestroy {
       then(response => {
         this.comments.push(response);
         console.log('Datos enviados');
+
+        this.commentSuccess = true;
+        this.commentError = false;
+
         this.data = {};
-      });
+      })
+      .catch(response => {
+        this.commentSuccess = false;
+        this.commentError = true;
+      })
+      ;
   }
 
   ngOnDestroy() {

@@ -12,6 +12,9 @@
 
 <div>
   <h3>New comment</h3>
+  <div class="alert alert-success" role="alert" *ngIf="commentSuccess">Comment saved</div>
+  <div class="alert alert-danger" role="alert" *ngIf="commentError">Comment fail</div>
+
   <form (ngSubmit)="sendComment()">
     <input type="text" name="author" [(ngModel)]="data.createdBy">
     <textarea name="comment" [(ngModel)]="data.comment"></textarea>
