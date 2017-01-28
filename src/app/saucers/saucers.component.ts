@@ -11,30 +11,42 @@ import {SaucerService} from './saucers.service';
   providers: [SaucerService, RestaurantService]
 })
 export class SaucersComponent implements OnInit {
-
+  restaurantId: string = '';
   restaurant = {};
   saucers = [];
+  private subscription: Subscription;
 
-  constructor(private saucerService: SaucerService,
-    private restaurantService: RestaurantService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private saucerService: SaucerService,
+    private restaurantService: RestaurantService
+  ) { }
 
   ngOnInit() {
 
-    let restaurantId = '58866b06eaa0c200046f5e6e';
+    // let restaurantId = '58866b06eaa0c200046f5e6e';
 
-    this.saucerService.getSaucer(restaurantId).then(response => {
-      console.log('saucers: ' + response);
+    this.subscription = this.route.params.subscribe(
+      (params: any) => {
+        console.log('Params:', params);
+        this.restaurantId = params['id'];
 
-      this.saucers = response;
+        this.saucerService.getSaucer(this.restaurantId).then(response => {
+          console.log('saucers: ', response);
 
-    });
+          this.saucers = response;
 
-    this.restaurantService.getRestaurant(restaurantId).then(response => {
-      console.log('saucers: ' + response);
+        });
 
-      this.restaurant = response;
+        this.restaurantService.getRestaurant(this.restaurantId).then(response => {
+          console.log('Restaurant: ', response);
 
-    });
+          this.restaurant = response;
+
+        });
+      }
+    );
+
 
     // this.saucerService.getSaucer(restaurantId).then(response => {
     //   console.log('saucers: ' + response);
