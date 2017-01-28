@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 import {RestaurantService} from '../restaurant/restaurant.service';
+import {Restaurant} from '../restaurant/restaurant';
 import {SaucerService} from '../saucers/saucers.service';
 import {CommentService} from './comments.service';
 
@@ -14,7 +15,8 @@ import {CommentService} from './comments.service';
 export class CommentsComponent implements OnInit, OnDestroy {
 
   restaurantId = '';
-  restaurant = {};
+  // restaurant = {};
+  restaurant: Restaurant;
   saucerId = '';
   saucer = {};
   private subscription: Subscription;

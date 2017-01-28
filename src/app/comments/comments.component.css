@@ -4,7 +4,7 @@ ul {
   padding-top: 40px;
 }
 
-.commment {
+.comment {
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
@@ -12,7 +12,7 @@ ul {
   margin-bottom: 10px;
 }
 
-.commment span {
+.comment span {
   display: block;
   text-align: right;
   color: #666;
