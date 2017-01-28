@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-// import {RestaurantComponent} from '../restaurant/restaurant.component';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs/Rx';
+import {RestaurantService} from '../restaurant/restaurant.service';
 import {SaucerService} from './saucers.service';
 
 @Component({
   selector: 'app-saucers',
   templateUrl: './saucers.component.html',
   styleUrls: ['./saucers.component.css'],
-  providers: [SaucerService]
+  providers: [SaucerService, RestaurantService]
 })
 export class SaucersComponent implements OnInit {
 
   restaurant = {};
   saucers = [];
 
-  constructor(private saucerService: SaucerService) { }
+  constructor(private saucerService: SaucerService,
+    private restaurantService: RestaurantService) { }
 
   ngOnInit() {
 
@@ -23,6 +26,13 @@ export class SaucersComponent implements OnInit {
       console.log('saucers: ' + response);
 
       this.saucers = response;
+
+    });
+
+    this.restaurantService.getRestaurant(restaurantId).then(response => {
+      console.log('saucers: ' + response);
+
+      this.restaurant = response;
 
     });
 
