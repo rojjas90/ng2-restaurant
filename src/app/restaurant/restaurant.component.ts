@@ -26,6 +26,7 @@ export class RestaurantComponent implements OnInit {
     // //     this.restaurants = response;
     // //   });
 
+    // fail
     // let restaurantId = '';
     // this.restaurantService.getRestaurants(restaurantId).then(
     //   response => console.log('details: ' + restaurantId)
