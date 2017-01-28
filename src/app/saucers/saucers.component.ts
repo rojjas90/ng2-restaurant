@@ -11,7 +11,7 @@ import {SaucerService} from './saucers.service';
   providers: [SaucerService, RestaurantService]
 })
 export class SaucersComponent implements OnInit {
-  restaurantId: string = '';
+  restaurantId: '';
   restaurant = {};
   saucers = [];
   private subscription: Subscription;

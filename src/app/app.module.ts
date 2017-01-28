@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { SaucersComponent } from './saucers/saucers.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
     RestaurantComponent,
-    SaucersComponent
+    SaucersComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
