@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
 import 'rxjs/Rx';
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class RestaurantService {
-
-  apiURL = 'https://stark-river-41252.herokuapp.com/api/restaurants/';
+  apiURL = environment.API_URL + 'restaurants/';
+  // apiURL = 'https://stark-river-41252.herokuapp.com/api/restaurants/';
 
   getRestaurant(id: string) {
     return this.http.get(this.apiURL + id)

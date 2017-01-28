@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
 import 'rxjs/Rx';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class SaucerService {
 
-  apiURL = 'https://stark-river-41252.herokuapp.com/api/';
+  apiURL = environment.API_URL; // 'https://stark-river-41252.herokuapp.com/api/';
 
   constructor(private http: Http) { }
 
