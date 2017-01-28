@@ -20,6 +20,12 @@ export class RestaurantComponent implements OnInit {
     this.restaurantService.getRestaurants().then(response => {
       this.restaurants = response;
     });
+
+    // this.restaurantService.getRestaurants().then(
+    //   function(response) {
+    //     this.restaurants = response;
+    //   });
+
   }
 
 }

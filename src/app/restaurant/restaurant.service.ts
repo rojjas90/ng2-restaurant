@@ -4,7 +4,12 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class RestaurantService {
-  getRestaurant(id: number) {
+
+  apiURL = '';
+
+  getRestaurant(id: string) {
+    return this.http.get('https://stark-river-41252.herokuapp.com/api/restaurants')
+      .map((response: Response) => response.json()).toPromise();
 
   }
 
@@ -15,9 +20,19 @@ export class RestaurantService {
   getRestaurants() {
     return this.http.get('https://stark-river-41252.herokuapp.com/api/restaurants')
       .map((response: Response) => response.json()).toPromise();
+
+    // wrong function
+    // return this.http.get('https://stark-river-41252.herokuapp.com/api/restaurants')
+    //   .map(function (response: Response){
+    //     response.json()
+    //   })
+    //   .toPromise();
   }
 
   // getRestaurants() {
   //   return ['Uno', 'Dos', 'Tres'];
   // }
 }
+
+
+// https://stark-river-41252.herokuapp.com/explorer/
