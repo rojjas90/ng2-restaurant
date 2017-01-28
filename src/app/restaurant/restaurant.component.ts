@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  RestaurantService} from "./restaurant.service";
+import {  RestaurantService} from './restaurant.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -14,17 +14,22 @@ export class RestaurantComponent implements OnInit {
   constructor(private restaurantService: RestaurantService) { }
 
   ngOnInit() {
-    // this.restaurants = ["Uno", "dos"];
-    // this.restaurants = this.restaurantService.getRestaurants();
-
+    // // this.restaurants = ["Uno", "dos"];
+    // // this.restaurants = this.restaurantService.getRestaurants();
+    //
     this.restaurantService.getRestaurants().then(response => {
       this.restaurants = response;
     });
+    //
+    // // this.restaurantService.getRestaurants().then(
+    // //   function(response) {
+    // //     this.restaurants = response;
+    // //   });
 
-    // this.restaurantService.getRestaurants().then(
-    //   function(response) {
-    //     this.restaurants = response;
-    //   });
+    // let restaurantId = '';
+    // this.restaurantService.getRestaurants(restaurantId).then(
+    //   response => console.log('details: ' + restaurantId)
+    // );
 
   }
 

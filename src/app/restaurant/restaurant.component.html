@@ -3,5 +3,9 @@
 </h2>
 
 <ul>
-  <li *ngFor="let restaurant of restaurants" class="card">{{restaurant.name}}</li>
+  <li *ngFor="let restaurant of restaurants" class="card">{{restaurant.name}}
+    <h3>{{restaurant.name}}</h3>
+    <p>{{restaurant.description}}</p>
+    <a routerLink="restaurants/{{restaurant.id}}/saucers">View more</a>
+  </li>
 </ul>
