@@ -69,8 +69,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
       .catch(response => {
         this.commentSuccess = false;
         this.commentError = true;
-      })
-      ;
+      });
   }
 
   ngOnDestroy() {

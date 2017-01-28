@@ -22,12 +22,6 @@ export class CommentService {
       .map((response: Response) => response.json()).toPromise();
   }
 
-  //
-  // sendComment(saucerId: string, data) {
-  //   return this.http.get(this.apiURL + saucerId + '/comments')
-  //     .map((response: Response) => response.json()).toPromise();
-  // }
-
 }
 
 

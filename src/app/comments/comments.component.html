@@ -13,7 +13,7 @@
 <div>
   <h3>New comment</h3>
   <div class="alert alert-success" role="alert" *ngIf="commentSuccess">Comment saved</div>
-  <div class="alert alert-danger" role="alert" *ngIf="commentError">Comment fail</div>
+  <div class="alert alert-danger" role="alert" *ngIf="commentError">Comment failed</div>
 
   <form (ngSubmit)="sendComment()">
     <input type="text" name="author" [(ngModel)]="data.createdBy">
